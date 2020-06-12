@@ -1,0 +1,205 @@
+{
+    "key": "group_5e963c7a5c15e",
+    "title": "Developers",
+    "fields": [
+        {
+            "key": "field_5e963c80297b0",
+            "label": "Show Recommended Plugins",
+            "name": "witcom_show_recommended_plugins",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5ea34bf376092",
+            "label": "Show Developer Plugins",
+            "name": "witcom_show_developer_plugins",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5e97724aae7c6",
+            "label": "Crunch WitCom SCSS",
+            "name": "crunch_witcom_scss",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5e97d540937a1",
+            "label": "Breakpoints",
+            "name": "witcom_breakpoints",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_5e97d54b937a2",
+                    "label": "Xtra Small Breakpoint",
+                    "name": "witcom_breakpoint_xs",
+                    "type": "number",
+                    "instructions": "default 480px",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 480,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "px",
+                    "min": 1,
+                    "max": 1440,
+                    "step": 1
+                },
+                {
+                    "key": "field_5e97d832f9a5b",
+                    "label": "Small Breakpoint",
+                    "name": "witcom_breakpoint_sm",
+                    "type": "number",
+                    "instructions": "default 600px",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 600,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "px",
+                    "min": 1,
+                    "max": 1440,
+                    "step": 1
+                },
+                {
+                    "key": "field_5e97d9a3968d7",
+                    "label": "Medium Breakpoint",
+                    "name": "witcom_breakpoint_md",
+                    "type": "number",
+                    "instructions": "default 1024px",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 1024,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "px",
+                    "min": 1,
+                    "max": 1440,
+                    "step": 1
+                },
+                {
+                    "key": "field_5e97d9c813197",
+                    "label": "Large Breakpoint",
+                    "name": "witcom_breakpoint_lg",
+                    "type": "number",
+                    "instructions": "default 1280px",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 1280,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "px",
+                    "min": 1,
+                    "max": 1440,
+                    "step": 1
+                },
+                {
+                    "key": "field_5e97d9e7c1a8b",
+                    "label": "Extra Large Breakpoint",
+                    "name": "witcom_breakpoint_xl",
+                    "type": "number",
+                    "instructions": "default 1440",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 1440,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "px",
+                    "min": 1,
+                    "max": 1440,
+                    "step": 1
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-developers"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "show_in_graphql": 1,
+    "graphql_field_name": "developerFields",
+    "modified": 1588095564
+}

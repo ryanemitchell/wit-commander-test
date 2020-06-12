@@ -1,0 +1,52 @@
+{
+    "key": "group_5ea99bc870043",
+    "title": "WitCom Coupons Options",
+    "fields": [
+        {
+            "key": "field_5ea99c1670434",
+            "label": "Call to Action",
+            "name": "witcom_coupon_options_cta",
+            "type": "textarea",
+            "instructions": "The call to action that is shown in every coupon.\r\nUse this tag and class for phone numbers to use built in styling<br>\r\n<pre>&lt;a href=\"1234567891\" class=\"phone_number\"&gt;(123) 456-789&lt;\/a&gt;<\/pre>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 1,
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "",
+            "show_column": 0,
+            "show_column_weight": 1000,
+            "allow_quickedit": 0,
+            "allow_bulkedit": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-coupon-options"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "revisions"
+    ],
+    "active": 1,
+    "description": "",
+    "show_in_graphql": 1,
+    "graphql_field_name": "witcom-coupons-options",
+    "modified": 1588777362
+}

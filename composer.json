@@ -1,0 +1,51 @@
+{
+    "name": "witdigital/wit-commander",
+    "description": "WordPress plugin that provides base functionality for use with Wit Digital themes and plugins.",
+    "type": "wordpress-plugin",
+    "require": {
+        "scssphp/scssphp": "1.0.9",
+        "yahnis-elsts/plugin-update-checker": "^4.9",
+         "mrmrs/pesticide": "*"
+    },
+    "require-dev": {
+        "ffraenz/private-composer-installer": "^4.0"
+    },
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "mrmrs/pesticide",
+        "version": "1.2.3",
+        "type": "library",
+        "source": {
+          "url": "https://github.com/mrmrs/pesticide.git",
+          "type": "git",
+          "reference": "master"
+        }
+      }
+    }
+
+  ],
+    "license": "GPL-3.0-only",
+    "authors": [
+        {
+            "name": "Ryan E. Mitchell",
+            "email": "ryan@witdelivers.com"
+        }
+    ],
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "lint": [
+            "phpcs --ignore=index.php,vendor,resources,storage,dist --extensions=php --standard=PSR12 ."
+        ],
+        "post-autoload-dump": [
+            "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
+        ]
+    }
+}

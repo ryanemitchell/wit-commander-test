@@ -1,0 +1,13 @@
+body,
+html {
+ background-color: purple;
+}
+
+@import "~@glidejs/glide/dist/css/glide.core.css";
+@import "~@glidejs/glide/dist/css/glide.theme.css";
+
+
+// Additional Styling for Core BLocks
+@import "core-column";
+
+

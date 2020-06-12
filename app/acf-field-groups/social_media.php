@@ -1,0 +1,157 @@
+<?php
+	/**
+	 * Filename: social_media.php
+	 * Description:
+	 * Author: ryan
+	 */
+
+	if( function_exists('acf_add_local_field_group') ):
+
+		acf_add_local_field_group(array(
+			'key' => 'group_5bb3dfd4cedbe',
+			'title' => 'Social Media',
+			'fields' => array(
+				array(
+					'key' => 'field_5bb3dfdb057f2',
+					'label' => 'Social Media',
+					'name' => 'social_media',
+					'type' => 'repeater',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'collapsed' => '',
+					'min' => 0,
+					'max' => 0,
+					'layout' => 'block',
+					'button_label' => '',
+					'sub_fields' => array(
+						array(
+							'key' => 'field_5bb3dfee057f3',
+							'label' => 'Site Name',
+							'name' => 'social_media_site_name',
+							'type' => 'text',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => '',
+							'placeholder' => '',
+							'prepend' => '',
+							'append' => '',
+							'maxlength' => '',
+						),
+						array(
+							'key' => 'field_5bb3e028057f4',
+							'label' => 'Profile Link',
+							'name' => 'social_social_media_site_url',
+							'type' => 'url',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'default_value' => '',
+							'placeholder' => '',
+						),
+						array(
+							'key' => 'field_5bb3e042057f5',
+							'label' => 'Site Icon',
+							'name' => 'social_media_icon',
+							'type' => 'image',
+							'instructions' => 'SVG recommended for images though bitmaps will work.',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'return_format' => 'url',
+							'preview_size' => 'thumbnail',
+							'library' => 'all',
+							'min_width' => '',
+							'min_height' => '',
+							'min_size' => '',
+							'max_width' => '',
+							'max_height' => '',
+							'max_size' => '',
+							'mime_types' => '',
+						),
+						array(
+							'key' => 'field_5bb3e070057f6',
+							'label' => 'Site Hover Icon',
+							'name' => 'social_media_logo_hover',
+							'type' => 'image',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'return_format' => 'url',
+							'preview_size' => 'thumbnail',
+							'library' => 'all',
+							'min_width' => '',
+							'min_height' => '',
+							'min_size' => '',
+							'max_width' => '',
+							'max_height' => '',
+							'max_size' => '',
+							'mime_types' => '',
+						),
+						array(
+							'key' => 'field_5bb3e0aa057f7',
+							'label' => 'Is Active',
+							'name' => 'is_active',
+							'type' => 'true_false',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'message' => '',
+							'default_value' => 1,
+							'ui' => 0,
+							'ui_on_text' => '',
+							'ui_off_text' => '',
+						),
+					),
+				),
+			),
+			'location' => array(
+				array(
+					array(
+						'param' => 'options_page',
+						'operator' => '==',
+						'value' => 'acf-options-social-media',
+					),
+				),
+			),
+			'menu_order' => 12,
+			'position' => 'normal',
+			'style' => 'default',
+			'label_placement' => 'top',
+			'instruction_placement' => 'label',
+			'hide_on_screen' => '',
+			'active' => true,
+			'description' => '',
+		));
+
+	endif;
