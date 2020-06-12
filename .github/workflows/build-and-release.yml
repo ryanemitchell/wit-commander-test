@@ -33,13 +33,7 @@ jobs:
         run: npm run production --if-present
       - name: remove node modules
         run: rm -R node_modules
-      - name: echo commit description
-        run: echo '${{ github.event.head_commit.message }}'
-      - name: Archive production artifacts
-        uses: actions/upload-artifact@v1
-        with:
-          name: dist
-          path: dist
+
       - name: Git Commit and Push w/ Force Push
         uses: dciborow/commit@0.0.1
         with:
@@ -50,11 +44,7 @@ jobs:
           force-push: 'true'
           name: ${{ github.event.pusher.name }}
           email: ${{ github.event.pusher.email }}
-      - name: Archive Release
-        uses: thedoctor0/zip-release@master
-        with:
-          filename: 'release.zip'
-          exclusions: '*.git* /*node_modules/* .editorconfig'
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
