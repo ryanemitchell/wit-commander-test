@@ -1,0 +1,71 @@
+name: Build and Push to release branch
+
+on:
+  push:
+    branches:
+      - stable
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Composer
+        uses: php-actions/composer@v1
+        with:
+          command: install
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Cache Node.js modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm # npm cache files are stored in `~/.npm` on Linux/macOS
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-node-
+            ${{ runner.OS }}-
+      - name: Install dependencies
+        run: npm ci
+      - name: Build Project
+        run: npm run production --if-present
+      - name: remove node modules
+        run: rm -R node_modules
+      - name: echo commit description
+        run: echo '${{ github.event.head_commit.message }}'
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: dist
+          path: dist
+      - name: Git Commit and Push w/ Force Push
+        uses: dciborow/commit@0.0.1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          push-branch: 'release_${{ github.event.head_commit.message }}'
+          commit-message: 'build for release_${{ github.event.head_commit }} '
+          #           force-add: 'true'
+          force-push: 'true'
+          name: ${{ github.event.pusher.name }}
+          email: ${{ github.event.pusher.email }}
+      - name: Archive Release
+        uses: thedoctor0/zip-release@master
+        with:
+          filename: 'release.zip'
+          exclusions: '*.git* /*node_modules/* .editorconfig'
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: release_${{ github.event.head_commit.message }}
+          release_name: Release_${{ github.event.head_commit.message }}
+          body: |
+            Release_${{ github.event.head_commit.message }}
+          draft: false
+          prerelease: false
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
