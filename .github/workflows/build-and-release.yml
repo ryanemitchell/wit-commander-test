@@ -34,16 +34,16 @@ jobs:
       - name: remove node modules
         run: rm -R node_modules
 
-      - name: Git Commit and Push w/ Force Push
-        uses: dciborow/commit@0.0.1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          push-branch: 'release_${{ github.event.head_commit.message }}'
-          commit-message: 'build for release_${{ github.event.head_commit }} '
-          #           force-add: 'true'
-          force-push: 'true'
-          name: ${{ github.event.pusher.name }}
-          email: ${{ github.event.pusher.email }}
+#       - name: Git Commit and Push w/ Force Push
+#         uses: dciborow/commit@0.0.1
+#         with:
+#           github-token: ${{ secrets.GITHUB_TOKEN }}
+#           push-branch: 'release_${{ github.event.head_commit.message }}'
+#           commit-message: 'build for release_${{ github.event.head_commit }} '
+#           #           force-add: 'true'
+#           force-push: 'true'
+#           name: ${{ github.event.pusher.name }}
+#           email: ${{ github.event.pusher.email }}
 
       - name: Create Release
         id: create_release
@@ -55,7 +55,7 @@ jobs:
           release_name: Release_${{ github.event.head_commit.message }}
           body: |
             Release_${{ github.event.head_commit.message }}
-          draft: false
+          draft: true
           prerelease: false
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
